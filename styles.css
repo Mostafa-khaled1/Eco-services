@@ -427,27 +427,30 @@ footer a:hover{text-decoration:underline}
     border:none;
     margin-top:10px;
   }
-  .nav-links.open{display:flex}
+  .nav-links.open{display:flex;align-items:center;flex-direction:column;}
   .nav-links li{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
     list-style:none;
+    padding:8px 0;
     position:relative;
-    padding-right:24px;
-    padding-left:0;
   }
   .nav-links li::before{
     content:'•';
-    position:absolute;
-    right:0;
-    top:0.35em;
+    display:inline-block;
+    margin:0;
     color:var(--green);
     font-size:18px;
     line-height:1;
+    position:static;
   }
   .nav-links a{
-    display:block;
-    width:100%;
-    padding:10px 0;
-    text-align:right;
+    display:inline-block;
+    width:auto;
+    padding:0;
+    text-align:center;
     height:auto;
     overflow:visible;
     white-space:nowrap;
