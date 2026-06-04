@@ -45,10 +45,13 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
 /* ══════════════════════════════════════
    NAV — active on scroll
 ══════════════════════════════════════ */
-const secs = document.querySelectorAll('section[id]');
+const secs = Array.from(document.querySelectorAll('section[id]'));
 window.addEventListener('scroll', () => {
-  let cur = '';
-  secs.forEach(s => { if (window.scrollY >= s.offsetTop - 140) cur = s.id; });
+  let cur = secs[0] ? secs[0].id : '';
+  const currentPosition = window.scrollY + window.innerHeight * 0.35;
+  secs.forEach(s => {
+    if (currentPosition >= s.offsetTop) cur = s.id;
+  });
   document.querySelectorAll('.nl').forEach(l => {
     l.classList.toggle('active', l.getAttribute('href') === '#' + cur);
   });

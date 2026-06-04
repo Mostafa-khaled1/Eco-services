@@ -138,9 +138,10 @@ nav.scrolled{padding:10px 48px}
 .hero-title{
   font-size:clamp(52px,10vw,120px);font-weight:900;line-height:1.05;
   margin-bottom:16px;
-  animation:heroenter 1s .2s ease both;
+  animation:heroenter 1s .2s ease both, titlefloat 10s ease-in-out infinite;
 }
 .hero-title .g{color:var(--green)}
+@keyframes titlefloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .hero-tagline{
   font-size:clamp(15px,2vw,20px);color:var(--gray);font-weight:400;
   max-width:560px;margin:0 auto 48px;line-height:1.8;
@@ -532,14 +533,14 @@ footer a:hover{text-decoration:underline}
 <nav id="mainNav">
   <a href="#hero" class="logo">
     <div class="logo-badge">ECO</div>
-    <div class="logo-text"><strong>ECO</strong>Performance Marketing</div>
+    <!-- <div class="logo-text"><strong>ECO</strong>Performance Marketing</div> -->
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#about"    class="nl" data-text="من ECO"><span class="nl-inner"><span class="nl-top">من ECO</span><span class="nl-bot">من ECO</span></span></a></li>
     <li><a href="#vision"   class="nl" data-text="رؤيتنا"><span class="nl-inner"><span class="nl-top">رؤيتنا</span><span class="nl-bot">رؤيتنا</span></span></a></li>
     <li><a href="#services" class="nl" data-text="الخدمات"><span class="nl-inner"><span class="nl-top">الخدمات</span><span class="nl-bot">الخدمات</span></span></a></li>
     <li><a href="#why"      class="nl" data-text="لماذا نحن"><span class="nl-inner"><span class="nl-top">لماذا نحن</span><span class="nl-bot">لماذا نحن</span></span></a></li>
-    <li><a href="#contact"  class="nl" data-text="تواصل"><span class="nl-inner"><span class="nl-top">تواصل</span><span class="nl-bot">تواصل</span></span></a></li>
+    <li><a href="#contact"  class="nl" data-text="تواصل"><span class="nl-inner"><span class="nl-top">تواصل بنا</span><span class="nl-bot">تواصل</span></span></a></li>
   </ul>
   <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
 </nav>
@@ -554,10 +555,7 @@ footer a:hover{text-decoration:underline}
   <div class="hero-content">
     <span class="hero-pill">ECO Performance Marketing</span>
     <h1 class="hero-title">خدمات<br/><span class="g">التصوير</span></h1>
-    <p class="hero-tagline">
-       نؤمن أن الصورة ليست لقطة،<br/>
-      بل هي <em>لغة بيع</em>
-    </p>
+    <p class="hero-tagline">    </p>
     <div class="cta-row">
       <a href="#services" class="btn-primary">استكشف خدماتنا ←</a>
       <a href="#contact"  class="btn-secondary">تواصل معنا</a>
@@ -646,7 +644,7 @@ footer a:hover{text-decoration:underline}
       <button class="tab" data-tab="menu"> تصوير المنيو</button>
       <button class="tab" data-tab="ugc"> UGC</button>
       <button class="tab" data-tab="video"> فيديوهات</button>
-      <button class="tab" data-tab="sessions"> الباقات</button>
+      <button class="tab" data-tab="sessions"> الجلسات</button>
     </div>
 
     <!-- PRODUCTS -->
@@ -732,9 +730,20 @@ footer a:hover{text-decoration:underline}
         <span class="mpb-l">بداية من ٢٠ صورة</span>
         <span class="mpb-r">٤٠ ريال للصورة</span>
       </div>
-      <div class="price-grid" data-aos="fade-up" data-aos-delay="120">
+      <!-- <div class="price-grid" data-aos="fade-up" data-aos-delay="120">
         <div class="ptag">المنيو الكامل — <span class="amount">تسعيرة خاصة</span></div>
-      </div>
+      </div> -->
+      <div class="scard" data-aos="fade-up" data-aos-delay="160" style="grid-column:1/-1">
+          <h3> باقات المطاعم</h3>
+          <ul>
+            <li>تصوير احترافي لقائمة الطعام الكاملة</li>
+            <li>جلسات مخصصة لمتطلبات المطعم</li>
+            <li>تسليم سريع مع تعديلات غير محدودة</li>
+          </ul>
+          <div class="sbadges" style="margin-top:16px">
+            <span class="sbadge-out">تسعيرة خاصة — تواصل معنا</span>
+          </div>
+        </div>
       <div class="cat-section" data-aos="fade-up">
         <div class="cat-label"> مشروبات</div>
         <div class="cat-grid">
@@ -829,7 +838,7 @@ footer a:hover{text-decoration:underline}
     <!-- SESSIONS / PACKAGES -->
     <div class="panel" id="panel-sessions">
       <div class="panel-header" data-aos="fade-up">
-        <h3><span class="g">الباقات</span> والجلسات</h3>
+        <h3><span class="g"></span> الجلسات</h3>
         <p>جلسات تصوير متكاملة تمنح منتجك حضوراً مميزاً وتضاعف جاذبيته لدى العملاء.</p>
       </div>
       <div class="sessions">
@@ -856,17 +865,7 @@ footer a:hover{text-decoration:underline}
             <span class="sbadge-out">٢,٨٠٠ ريال / ٤-٥ ساعات</span>
           </div>
         </div>
-        <div class="scard" data-aos="fade-up" data-aos-delay="160" style="grid-column:1/-1">
-          <h3> باقات المطاعم</h3>
-          <ul>
-            <li>تصوير احترافي لقائمة الطعام الكاملة</li>
-            <li>جلسات مخصصة لمتطلبات المطعم</li>
-            <li>تسليم سريع مع تعديلات غير محدودة</li>
-          </ul>
-          <div class="sbadges" style="margin-top:16px">
-            <span class="sbadge-out">تسعيرة خاصة — تواصل معنا</span>
-          </div>
-        </div>
+        
       </div>
     </div>
 
@@ -912,7 +911,7 @@ footer a:hover{text-decoration:underline}
   <div class="section-inner">
     <div class="contact-center" data-aos="fade-up">
       <h2 class="contact-heading">معنا، صورتك <span class="g">مو بس لقطة</span></h2>
-      <p class="contact-sub">صورتك هي بداية قصتك مع عميلك</p>
+      <h2 class="contact-heading contact-sub">صورتك <span class="g">هي بداية قصتك مع عميلك</span></h2>
       <div class="contact-cards">
         <div class="ccard" data-aos="fade-up" data-aos-delay="0">
           <div class="ccard-icon">📞</div>
@@ -925,7 +924,7 @@ footer a:hover{text-decoration:underline}
           <div class="ccard-icon">✉️</div>
           <div>
             <div class="ccard-label">البريد الإلكتروني</div>
-            <div class="ccard-val"><a href="mailto:marketingecho97@gmail.com">marketingecho97@gmail.com</a></div>
+            <div class="ccard-val"><a href="mailto:marketingecho97@gmail.com">info@ecoperformancemarketing.com</a></div>
           </div>
         </div>
         <div class="ccard" data-aos="fade-up" data-aos-delay="160">
